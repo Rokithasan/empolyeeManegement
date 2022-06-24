@@ -33,6 +33,8 @@ public class AdminloginController implements Initializable {
     private AnchorPane displayAnchorepane;
 
     private AnchorPane anchorPane;
+    @FXML
+    private Button backtoimployeloginId;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,6 +74,27 @@ public class AdminloginController implements Initializable {
 
     }
 
+    @FXML
+    private void onActionAdminLogin(MouseEvent event) {
+    }
+
+    @FXML
+    private void onActionBack(ActionEvent event) throws IOException {
+
+        employeLoginScene(event);
+
+    }
+
+    public void employeLoginScene(ActionEvent event) throws IOException {
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.EMPLOYELOGIN));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(layout);
+        stage.setTitle("Empolye Dashbord ");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
     public void adminDashbordScene(ActionEvent event) throws IOException {
         Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMINDASHBORD));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -81,9 +104,4 @@ public class AdminloginController implements Initializable {
         stage.show();
 
     }
-
-    @FXML
-    private void onActionAdminLogin(MouseEvent event) {
-    }
-
 }

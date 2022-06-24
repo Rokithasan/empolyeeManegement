@@ -38,10 +38,15 @@ public class EmployedashbordController implements Initializable {
 
     @FXML
     private void onActionchatwithAdmin(ActionEvent event) {
+        
     }
 
     @FXML
-    private void onActionupdateDetails(ActionEvent event) {
+    private void onActionupdateDetails(ActionEvent event) throws IOException {
+        
+        switchSceneUpdateDetails(event);
+        
+        
     }
 
     @FXML
@@ -54,6 +59,16 @@ public class EmployedashbordController implements Initializable {
 
     public void switchSceneback(ActionEvent event) throws IOException {
         Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMINLOGIN));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(layout);
+        stage.setTitle("Login");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    
+        public void switchSceneUpdateDetails(ActionEvent event) throws IOException {
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.UPDATEEMPLOYE));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Login");
