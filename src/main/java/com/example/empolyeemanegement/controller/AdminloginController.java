@@ -19,8 +19,8 @@ import javafx.stage.Stage;
 
 public class AdminloginController implements Initializable {
 
-    String username = "rokit";
-    String password = "1234";
+    String username = "admin";
+    String password = "admin";
 
     @FXML
     private TextField nameadmintextfield;
