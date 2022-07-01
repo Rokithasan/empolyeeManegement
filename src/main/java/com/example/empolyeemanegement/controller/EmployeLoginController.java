@@ -1,6 +1,6 @@
-package employe;
+package com.example.empolyeemanegement.controller;
 
-import Helper.Links;
+import com.example.empolyeemanegement.*;
 import java.io.IOException;
 import java.net.URL;
 import static java.nio.file.Files.list;
@@ -99,7 +99,7 @@ public class EmployeLoginController implements Initializable {
     }
     
     public void employeLoginScene(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.EMPLOYEDASHBORD));
+        Parent layout = FXMLLoader.load(getClass().getResource("employelogin.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Empolye Dashbord ");

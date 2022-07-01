@@ -7,9 +7,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employedashbord.EmployedashbordController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.EmployedashbordController">
     <stylesheets>
-        <URL value="@employedashbord.css" />
     </stylesheets>
     <children>
         <Label layoutX="84.0" layoutY="73.0" text="Name" />
