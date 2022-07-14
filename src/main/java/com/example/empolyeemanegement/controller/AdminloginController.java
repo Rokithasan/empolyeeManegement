@@ -3,6 +3,7 @@ package com.example.empolyeemanegement.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -79,9 +80,7 @@ public class AdminloginController implements Initializable {
 
     @FXML
     private void onActionBack(ActionEvent event) throws IOException {
-
         employeLoginScene(event);
-
     }
 
     public void employeLoginScene(ActionEvent event) throws IOException {
@@ -91,7 +90,6 @@ public class AdminloginController implements Initializable {
         stage.setTitle("Empolye Dashbord ");
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void adminDashbordScene(ActionEvent event) throws IOException {
@@ -101,6 +99,5 @@ public class AdminloginController implements Initializable {
         stage.setTitle("Admin Dashbord ");
         stage.setScene(scene);
         stage.show();
-
     }
 }
