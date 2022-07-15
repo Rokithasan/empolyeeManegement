@@ -29,8 +29,6 @@
 
         <!-- Hibernate Entity Mapping Class -->
         <mapping class="com.example.empolyeemanegement.model.User"/>
-        <mapping class="model.Category"/>
-
 
     </session-factory>
 </hibernate-configuration>

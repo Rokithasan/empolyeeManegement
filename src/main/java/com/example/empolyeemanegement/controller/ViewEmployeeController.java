@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-public class ViewempController implements Initializable {
+public class ViewEmployeeController implements Initializable {
 
     @FXML
     private TextArea viewTextAreaID;

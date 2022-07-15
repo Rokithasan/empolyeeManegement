@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.example.empolyeemanegement.controller;
 
 import java.net.URL;
@@ -15,26 +19,27 @@ import javafx.scene.control.TextField;
  *
  * @author Hp
  */
-public class AddempController implements Initializable {
+public class UpdateEmployeeController implements Initializable {
 
     @FXML
-    private TextField employenamtextfieldid;
+    private TextField updatenametextfieldId;
     @FXML
-    private TextField empolyeposttextfieldid;
+    private TextField updateposttextfieldid;
     @FXML
-    private TextArea employefulldetailsid;
+    private TextArea updatedetailstextfieldid;
     @FXML
-    private Button saveemployebuttonid;
+    private Button updatebuttonid;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }
+        // TODO
+    }    
 
     @FXML
-    private void onActionSaveEmploye(ActionEvent event) {
+    private void onActionUpdateEmploye(ActionEvent event) {
     }
     
 }

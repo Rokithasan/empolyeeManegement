@@ -3,6 +3,8 @@ package com.example.empolyeemanegement.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.example.empolyeemanegement.utils.Links;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +17,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class EmployedashbordController implements Initializable {
+public class EmployeeDashboardController implements Initializable {
 
     @FXML
     private TextArea detailstextarea;
@@ -57,7 +59,7 @@ public class EmployedashbordController implements Initializable {
     }
 
     public void switchSceneback(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMINLOGIN));
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_LOGIN));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Login");
@@ -67,7 +69,7 @@ public class EmployedashbordController implements Initializable {
     }
     
         public void switchSceneUpdateDetails(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.UPDATEEMPLOYE));
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.UPDATE_EMPLOYEE));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Login");

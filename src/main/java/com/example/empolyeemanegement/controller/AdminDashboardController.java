@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.example.empolyeemanegement.utils.Links;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class AdmindshbordController implements Initializable {
+public class AdminDashboardController implements Initializable {
 
     @FXML
     private Button addemployebuttonid;
@@ -43,10 +45,10 @@ public class AdmindshbordController implements Initializable {
     private void onActionAddEmployeButton(MouseEvent event) {
 
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.ADDEMPLOYE));
+            anchorPane = FXMLLoader.load(getClass().getResource(Links.ADD_EMPLOYEE));
             displayanchorePane.getChildren().setAll(anchorPane);
         } catch (IOException ex) {
-            Logger.getLogger(AdmindshbordController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -54,10 +56,10 @@ public class AdmindshbordController implements Initializable {
     private void onActionUpdateEmployeButton(MouseEvent event) {
 
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.UPDATEEMPLOYE));
+            anchorPane = FXMLLoader.load(getClass().getResource(Links.UPDATE_EMPLOYEE));
             displayanchorePane.getChildren().setAll(anchorPane);
         } catch (IOException ex) {
-            Logger.getLogger(AdmindshbordController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -66,20 +68,20 @@ public class AdmindshbordController implements Initializable {
     private void onActionViewAllEmployeButton(MouseEvent event) {
 
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.VIEWALLEMPLOYE));
+            anchorPane = FXMLLoader.load(getClass().getResource(Links.VIEW_EMPLOYEE));
             displayanchorePane.getChildren().setAll(anchorPane);
         } catch (IOException ex) {
-            Logger.getLogger(AdmindshbordController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
     private void onActionDeleteButton(MouseEvent event) {
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.DELETEEMPLOYE));
+            anchorPane = FXMLLoader.load(getClass().getResource(Links.DELETE_EMPLOYEE));
             displayanchorePane.getChildren().setAll(anchorPane);
         } catch (IOException ex) {
-            Logger.getLogger(AdmindshbordController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -91,7 +93,7 @@ public class AdmindshbordController implements Initializable {
     }
 
     public void employeLoginScene(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.EMPLOYELOGIN));
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.EMPLOYEE_LOGIN));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Empolye Dashbord ");

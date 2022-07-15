@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.example.empolyeemanegement.App;
+import com.example.empolyeemanegement.utils.Links;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class AdminloginController implements Initializable {
+public class AdminLoginController implements Initializable {
 
     private App app;
 
@@ -88,7 +89,7 @@ public class AdminloginController implements Initializable {
     }
 
     public void employeLoginScene(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.EMPLOYELOGIN));
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.EMPLOYEE_LOGIN));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Empolye Dashbord ");
@@ -97,7 +98,7 @@ public class AdminloginController implements Initializable {
     }
 
     public void adminDashbordScene(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(app.getClass().getResource(Links.ADMINDASHBORD));
+        Parent layout = FXMLLoader.load(app.getClass().getResource(Links.ADMIN_DASHBOARD));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Admin Dashbord ");
