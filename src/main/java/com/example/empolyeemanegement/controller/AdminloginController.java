@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.example.empolyeemanegement.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class AdminloginController implements Initializable {
+
+    private App app;
 
     String username = "admin";
     String password = "admin";
@@ -53,6 +56,7 @@ public class AdminloginController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Please Fill all requre Information");
             alert.showAndWait();
+
         } else {
 
             if (name.equals(username) && password.equals(this.password)) {
@@ -93,11 +97,15 @@ public class AdminloginController implements Initializable {
     }
 
     public void adminDashbordScene(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMINDASHBORD));
+        Parent layout = FXMLLoader.load(app.getClass().getResource(Links.ADMINDASHBORD));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
         stage.setTitle("Admin Dashbord ");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void setApp(App app){
+        this.app = app;
     }
 }

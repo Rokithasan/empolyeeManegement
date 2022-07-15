@@ -17,6 +17,5 @@ public class Links {
     public static String VIEWALLEMPLOYE = "viewemp.fxml";
 
     public static String DELETEEMPLOYE = "deleteemp.fxml";
-//
-    
+
 }

@@ -31,8 +31,7 @@ public class AddempController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    }
 
     @FXML
     private void onActionSaveEmploye(ActionEvent event) {

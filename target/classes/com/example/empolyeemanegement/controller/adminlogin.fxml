@@ -5,7 +5,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="displayAnchorepane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminloginController">
+<AnchorPane id="AnchorPane" fx:id="displayAnchorepane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.empolyeemanegement.controller.AdminloginController">
    <children>
       <Label layoutX="157.0" layoutY="119.0" text="Name" />
       <Label layoutX="157.0" layoutY="169.0" text="Password" />
