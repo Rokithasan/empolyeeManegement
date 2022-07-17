@@ -1,30 +1,44 @@
 package com.example.empolyeemanegement.model;
 
-public class User {
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
+
+@Entity
+@Table(name = "user")
+public class User implements Serializable {
 
     //like employee id,
     //// employee name, department name, mobile number, and employee salary.
-    private int userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String mobileNum;
+
+    @Column(nullable = false)
     private Role role;
 
     public User() {
     }
 
-    public User(int userId, String name, String mobileNum, Role role) {
-        this.userId = userId;
+    public User(long id, String name, String mobileNum, Role role) {
+        this.id = id;
         this.name = name;
         this.mobileNum = mobileNum;
         this.role = role;
     }
 
-    public int getUserId() {
-        return userId;
+    public long getId() {
+        return id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -52,9 +66,22 @@ public class User {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", mobileNum='" + mobileNum + '\'' +
                 ", role=" + role +

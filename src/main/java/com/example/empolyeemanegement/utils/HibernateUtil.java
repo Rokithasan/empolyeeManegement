@@ -27,4 +27,8 @@ public class HibernateUtil {
         // Close caches and connection pools
         getSessionFactory().close();
     }
+
+    public static void main(String[] args) {
+        System.out.println(getSessionFactory());
+    }
 }
