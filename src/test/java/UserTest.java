@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-public class DemoUnitTesing {
+public class UserTest {
 
 
     @BeforeEach

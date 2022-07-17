@@ -8,8 +8,6 @@ import java.util.Objects;
 @Table(name = "user")
 public class User implements Serializable {
 
-    //like employee id,
-    //// employee name, department name, mobile number, and employee salary.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -23,14 +21,22 @@ public class User implements Serializable {
     @Column(nullable = false)
     private Role role;
 
+    @Column(nullable = false, unique = true)
+    private String username;
+
+    @Column(nullable = false)
+    private String password;
+
     public User() {
     }
 
-    public User(long id, String name, String mobileNum, Role role) {
+    public User(long id, String name, String mobileNum, Role role, String username, String password) {
         this.id = id;
         this.name = name;
         this.mobileNum = mobileNum;
         this.role = role;
+        this.username = username;
+        this.password = password;
     }
 
     public long getId() {
@@ -63,6 +69,22 @@ public class User implements Serializable {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
