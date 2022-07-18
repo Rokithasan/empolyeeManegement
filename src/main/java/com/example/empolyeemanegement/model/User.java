@@ -1,5 +1,7 @@
 package com.example.empolyeemanegement.model;
 
+import com.example.empolyeemanegement.utils.PasswordManager;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
@@ -84,6 +86,7 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
+        // save encoded password
         this.password = password;
     }
 

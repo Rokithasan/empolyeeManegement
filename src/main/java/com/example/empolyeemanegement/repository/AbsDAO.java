@@ -45,7 +45,7 @@ public abstract class AbsDAO<T extends Serializable> {
     }
 
 //    insert data in a table
-    public T createOrUpdate(final T entity) {
+    public T create(final T entity) {
 
         // if Transaction is not active
         Transaction tx = getCurrentSession().getTransaction();
