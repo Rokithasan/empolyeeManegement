@@ -13,10 +13,6 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-
-        UserDAO dao = new UserDAO();
-        dao.findAll();
-
         Parent root = FXMLLoader.load(getClass().getResource(Links.EMPLOYEE_LOGIN));
         Scene scene = new Scene(root);
         stage.setScene(scene);

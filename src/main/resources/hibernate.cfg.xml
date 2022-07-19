@@ -28,6 +28,8 @@
 
         <!-- Hibernate Entity Mapping Class -->
         <mapping class="com.example.empolyeemanegement.model.User"/>
+        <mapping class="com.example.empolyeemanegement.model.Employee"/>
+        <mapping class="com.example.empolyeemanegement.model.Project"/>
 
     </session-factory>
 </hibernate-configuration>
