@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -21,13 +22,11 @@ import javafx.stage.Stage;
  */
 public class EmployeeLoginController implements Initializable {
 
-    private String username = "admin";
-    private String password = "admin";
+    @FXML
+    public TextField usernameFiled;
 
     @FXML
-    private TextField nameTxtField;
-    @FXML
-    private TextField passwordTxtField;
+    public PasswordField passwordField;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -37,8 +36,8 @@ public class EmployeeLoginController implements Initializable {
     @FXML
     private void handleLoginButtonAction(ActionEvent event) throws IOException {
 
-        String name = nameTxtField.getText();
-        String password = passwordTxtField.getText();
+        String name = usernameFiled.getText();
+        String password = passwordField.getText();
 
         if (name.isEmpty() || password.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -46,7 +45,7 @@ public class EmployeeLoginController implements Initializable {
             alert.setContentText("Please Fill all requre Information");
             alert.showAndWait();
         } else {
-            if (name.equals(username) && password.equals(this.password)) {
+            if (name.equals("admin") && password.equals("admin")) {
                 ((Node) event.getSource()).getScene().getWindow().hide();
                 loadEmployeeDashboard(event);
             } else {

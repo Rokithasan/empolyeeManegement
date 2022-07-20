@@ -14,7 +14,7 @@
         <property name="format_sql">true</property>
 
 <!--                For create db dynamically need disable this line-->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.jdbc.batch_size">50</property>
         <property name="hibernate.order_inserts">true</property>
