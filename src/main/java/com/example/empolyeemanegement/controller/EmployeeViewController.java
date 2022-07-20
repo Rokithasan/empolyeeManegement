@@ -3,27 +3,23 @@ package com.example.empolyeemanegement.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+import com.example.empolyeemanegement.model.Employee;
+import com.example.empolyeemanegement.repository.EmployeeDAO;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 public class EmployeeViewController implements Initializable {
 
-    @FXML
-    private TextArea viewTextAreaID;
-
-    @FXML
-    private Button viewallemployebuttonId;
+    public TextArea viewTxtAreaID;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO:
+        EmployeeDAO dao = new EmployeeDAO();
+        StringBuilder sb = new StringBuilder();
+        for (Employee employee:dao.findAll()){
+            sb.append(employee.toString()).append("\n");
+        }
+        viewTxtAreaID.setText(sb.toString());
     }    
 
-    @FXML
-    private void onActionViewAllEmploye(ActionEvent event) {
-    }
-    
 }

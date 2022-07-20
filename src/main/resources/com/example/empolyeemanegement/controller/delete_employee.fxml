@@ -8,18 +8,23 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.EmployeeDeleteController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.empolyeemanegement.controller.EmployeeDeleteController">
     <children>
         <Label layoutX="31.0" layoutY="42.0" text="Delete Employee by Username">
             <font>
-                <Font size="26.0" />
+                <Font size="26.0"/>
             </font>
         </Label>
-        <Label layoutX="31.0" layoutY="94.0" prefHeight="17.0" prefWidth="95.0" text="Enter Username" />
-        <TextField fx:id="usernameTxtFld" layoutX="31.0" layoutY="118.0" prefHeight="26.0" prefWidth="544.0" promptText="entyer username" />
-        <Line endX="443.0" layoutX="132.0" layoutY="83.0" startX="-100.0" />
-        <TextArea fx:id="detailsTxtArea" layoutX="31.0" layoutY="200.0" prefHeight="177.0" prefWidth="544.0" />
-        <Button layoutX="32.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewDetailsBtnAction" prefHeight="26.0" prefWidth="263.0" text="View Details" />
-        <Button layoutX="312.0" layoutY="160.0" mnemonicParsing="false" onAction="#deleteBtnAction" prefHeight="26.0" prefWidth="263.0" text="Delete Employee" />
+        <Label layoutX="31.0" layoutY="94.0" prefHeight="17.0" prefWidth="95.0" text="Enter Username"/>
+        <TextField fx:id="usernameTxtFld" layoutX="31.0" layoutY="118.0" prefHeight="26.0" prefWidth="544.0"
+                   promptText="entyer username"/>
+        <Line endX="443.0" layoutX="132.0" layoutY="83.0" startX="-100.0"/>
+        <TextArea fx:id="detailsTxtArea" layoutX="31.0" layoutY="200.0" prefHeight="177.0" prefWidth="544.0"/>
+        <Button layoutX="32.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewDetailsBtnAction"
+                prefHeight="26.0" prefWidth="263.0" text="View Details"/>
+        <Button layoutX="312.0" layoutY="160.0" mnemonicParsing="false" onAction="#deleteBtnAction" prefHeight="26.0"
+                prefWidth="263.0" text="Delete Employee"/>
     </children>
 </AnchorPane>
