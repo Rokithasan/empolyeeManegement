@@ -23,7 +23,6 @@ import javafx.stage.Stage;
 
 public class AdminLoginController implements Initializable {
 
-
     @FXML
     public TextField usernameField;
 
@@ -53,6 +52,7 @@ public class AdminLoginController implements Initializable {
 
     // admin login button handler
     public void adminLoginBtnAction(ActionEvent event) throws IOException {
+
         String username = usernameField.getText();
         String password = passwordFiled.getText();
 
@@ -79,7 +79,7 @@ public class AdminLoginController implements Initializable {
         Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_DASHBOARD));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
-        stage.setTitle("Admin Dashbord ");
+        stage.setTitle("Admin Dashboard ");
         stage.setScene(scene);
         stage.show();
     }
