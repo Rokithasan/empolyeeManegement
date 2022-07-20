@@ -16,7 +16,10 @@ public class Employee implements Serializable {
     private String department;
 
     @Column(nullable = false)
-    private String salary;
+    private double salary;
+
+    @Column(nullable = false)
+    private String designation;
 
     @OneToOne()
     private User user;
@@ -24,10 +27,11 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(long employeeId, String department, String salary, User user) {
+    public Employee(long employeeId, String department, double salary, String designation, User user) {
         this.employeeId = employeeId;
         this.department = department;
         this.salary = salary;
+        this.designation = designation;
         this.user = user;
     }
 
@@ -47,12 +51,20 @@ public class Employee implements Serializable {
         this.department = department;
     }
 
-    public String getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
     public User getUser() {
@@ -68,12 +80,13 @@ public class Employee implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return employeeId == employee.employeeId;
+        return employeeId == employee.employeeId &&
+                Objects.equals(user, employee.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(employeeId);
+        return Objects.hash(employeeId, user);
     }
 
     @Override
@@ -81,7 +94,8 @@ public class Employee implements Serializable {
         return "Employee{" +
                 "employeeId=" + employeeId +
                 ", department='" + department + '\'' +
-                ", salary='" + salary + '\'' +
+                ", salary=" + salary +
+                ", designation=" + designation +
                 ", user=" + user +
                 '}';
     }

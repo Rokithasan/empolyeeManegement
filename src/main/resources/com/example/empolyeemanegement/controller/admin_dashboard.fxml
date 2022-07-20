@@ -6,27 +6,42 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.AdminDashboardController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.empolyeemanegement.controller.AdminDashboardController">
     <children>
-        <VBox layoutX="61.0" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox layoutX="61.0" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <AnchorPane prefHeight="100.0" prefWidth="600.0">
                     <children>
-                        <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#adminLogoutBtnAction" text="Logout" />
-                  <Button fx:id="backBtnId" layoutX="531.0" layoutY="15.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="25.0" prefWidth="57.0" text="Back" />
+                        <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#adminLogoutBtnAction"
+                                text="Logout"/>
+                        <Button fx:id="backBtnId" layoutX="531.0" layoutY="15.0" mnemonicParsing="false"
+                                onAction="#backBtnAction" prefHeight="25.0" prefWidth="57.0" text="Back"/>
                     </children>
                 </AnchorPane>
                 <AnchorPane fx:id="displayAnchorPane" prefHeight="491.0" prefWidth="600.0">
                     <children>
-                        <Button layoutX="227.0" layoutY="153.0" mnemonicParsing="false" onAction="#addEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="Add Employee" />
-                        <Button layoutX="226.0" layoutY="197.0" mnemonicParsing="false" onAction="#updateEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="Update Employee" />
-                        <Button layoutX="227.0" layoutY="109.0" mnemonicParsing="false" onAction="#viewAllEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="View All Employee" />
-                        <Button layoutX="226.0" layoutY="238.0" mnemonicParsing="false" onAction="#deleteEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="Delete Employee" />
+                        <Button layoutX="227.0" layoutY="153.0" mnemonicParsing="false" onAction="#addEmployeeBtnAction"
+                                prefHeight="26.0" prefWidth="147.0" text="Add Employee"/>
+                        <Button layoutX="226.0" layoutY="197.0" mnemonicParsing="false"
+                                onAction="#updateEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0"
+                                text="Update Employee"/>
+                        <Button layoutX="227.0" layoutY="109.0" mnemonicParsing="false"
+                                onAction="#viewAllEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0"
+                                text="View All Employee"/>
+                        <Button layoutX="226.0" layoutY="238.0" mnemonicParsing="false"
+                                onAction="#deleteEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0"
+                                text="Delete Employee"/>
                         <Label layoutX="168.0" layoutY="23.0" text="Admin Dashboard">
                             <font>
-                                <Font name="System Bold" size="32.0" />
+                                <Font name="System Bold" size="32.0"/>
                             </font>
                         </Label>
+                        <Button layoutX="227.0" layoutY="280.0" mnemonicParsing="false"
+                                onAction="#adminChatServerOnAction" prefHeight="25.0" prefWidth="147.0"
+                                text="Open Chat Server"/>
                     </children>
                 </AnchorPane>
             </children>

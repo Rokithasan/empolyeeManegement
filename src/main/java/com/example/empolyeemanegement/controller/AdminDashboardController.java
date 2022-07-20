@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import com.example.empolyeemanegement.utils.Links;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,17 +20,17 @@ import javafx.stage.Stage;
 public class AdminDashboardController implements Initializable {
 
     @FXML
-    public Button backBtnId;
+    public Button backBtnId; // generic back button
 
     @FXML
-    private AnchorPane displayAnchorPane;
+    private AnchorPane displayAnchorPane; // sub section view
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backBtnId.setVisible(false);
     }
 
-    @FXML
+    @FXML // logout
     public void adminLogoutBtnAction(ActionEvent actionEvent) throws IOException {
         Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_LOGIN));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -41,6 +40,7 @@ public class AdminDashboardController implements Initializable {
         stage.show();
     }
 
+    // load view based on view name
     private void loadAnchorView(String link){
         try {
             backBtnId.setVisible(true);
@@ -77,8 +77,13 @@ public class AdminDashboardController implements Initializable {
         Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_DASHBOARD));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
-        stage.setTitle("Employee Dashboard");
+        stage.setTitle("Admin Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    public void adminChatServerOnAction(ActionEvent actionEvent) {
+        // todo: open chat server
     }
 }

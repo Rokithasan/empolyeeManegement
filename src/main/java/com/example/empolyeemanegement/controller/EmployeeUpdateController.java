@@ -12,18 +12,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author Hp
  */
-public class DeleteEmployeeController implements Initializable {
+public class EmployeeUpdateController implements Initializable {
 
     @FXML
-    private TextArea employelisttexterea;
+    private TextField updatenametextfieldId;
     @FXML
-    private Button deleteemployeid;
+    private TextField updateposttextfieldid;
+    @FXML
+    private TextArea updatedetailstextfieldid;
+    @FXML
+    private Button updatebuttonid;
 
     /**
      * Initializes the controller class.
@@ -34,7 +39,7 @@ public class DeleteEmployeeController implements Initializable {
     }    
 
     @FXML
-    private void onActionDeleteEmploye(ActionEvent event) {
+    private void onActionUpdateEmploye(ActionEvent event) {
     }
     
 }

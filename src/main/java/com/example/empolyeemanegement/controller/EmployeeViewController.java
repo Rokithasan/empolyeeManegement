@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-public class ViewEmployeeController implements Initializable {
+public class EmployeeViewController implements Initializable {
 
     @FXML
     private TextArea viewTextAreaID;
@@ -19,7 +19,7 @@ public class ViewEmployeeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // TODO:
     }    
 
     @FXML
