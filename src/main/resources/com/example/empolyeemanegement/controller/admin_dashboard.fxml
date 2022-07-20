@@ -7,27 +7,29 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.AdminDashboardController">
-   <children>
-      <VBox layoutX="61.0" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane prefHeight="100.0" prefWidth="600.0">
-               <children>
-                  <Button fx:id="backButtonid" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#onActionBackToHome" text="Logout" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="displayanchorePane" prefHeight="491.0" prefWidth="600.0">
-               <children>
-                  <Button fx:id="addemployebuttonid" layoutX="227.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#onActionAddEmployeButton" prefHeight="26.0" prefWidth="147.0" text="Add Employee" />
-                  <Button fx:id="updateemployebuttonid" layoutX="226.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#onActionUpdateEmployeButton" prefHeight="26.0" prefWidth="147.0" text="Update Employee" />
-                  <Button fx:id="viewallemployeid" layoutX="227.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#onActionViewAllEmployeButton" prefHeight="26.0" prefWidth="147.0" text="View All Employee" />
-                  <Button fx:id="deletebuttonid" layoutX="226.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#onActionDeleteButton" prefHeight="26.0" prefWidth="147.0" text="Delete Employee" />
-                  <Label layoutX="168.0" layoutY="23.0" text="Admin Dashboard">
-                     <font>
-                        <Font name="System Bold" size="32.0" />
-                     </font>
-                  </Label>
-               </children></AnchorPane>
-         </children>
-      </VBox>
-   </children>
+    <children>
+        <VBox layoutX="61.0" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#adminLogoutBtnAction" text="Logout" />
+                  <Button fx:id="backBtnId" layoutX="531.0" layoutY="15.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="25.0" prefWidth="57.0" text="Back" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="displayAnchorPane" prefHeight="491.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="227.0" layoutY="153.0" mnemonicParsing="false" onAction="#addEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="Add Employee" />
+                        <Button layoutX="226.0" layoutY="197.0" mnemonicParsing="false" onAction="#updateEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="Update Employee" />
+                        <Button layoutX="227.0" layoutY="109.0" mnemonicParsing="false" onAction="#viewAllEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="View All Employee" />
+                        <Button layoutX="226.0" layoutY="238.0" mnemonicParsing="false" onAction="#deleteEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0" text="Delete Employee" />
+                        <Label layoutX="168.0" layoutY="23.0" text="Admin Dashboard">
+                            <font>
+                                <Font name="System Bold" size="32.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

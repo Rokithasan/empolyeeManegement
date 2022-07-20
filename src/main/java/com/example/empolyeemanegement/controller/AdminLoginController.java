@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -27,7 +28,7 @@ public class AdminLoginController implements Initializable {
     public TextField usernameField;
 
     @FXML
-    public TextField passwordFiled;
+    public PasswordField passwordFiled;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

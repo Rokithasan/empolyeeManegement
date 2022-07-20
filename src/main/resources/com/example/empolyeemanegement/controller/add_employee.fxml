@@ -7,14 +7,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="addemploye.AddempController">
-   <children>
-      <Label layoutX="114.0" layoutY="35.0" text="Name" />
-      <Label layoutX="118.0" layoutY="77.0" text="Post" />
-      <Label layoutX="101.0" layoutY="121.0" text="Full Details" />
-      <TextField fx:id="employenamtextfieldid" layoutX="184.0" layoutY="31.0" prefHeight="25.0" prefWidth="200.0" promptText="enter empolye name" />
-      <TextField fx:id="empolyeposttextfieldid" layoutX="184.0" layoutY="73.0" prefHeight="25.0" prefWidth="200.0" promptText="add employe post" />
-      <TextArea fx:id="employefulldetailsid" layoutX="184.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" promptText="enter employe full details" />
-      <Button fx:id="saveemployebuttonid" layoutX="239.0" layoutY="338.0" mnemonicParsing="false" onAction="#onActionSaveEmploye" text="Save Employe" />
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/18"
+            fx:controller="com.example.empolyeemanegement.controller.AddEmployeeController">
+    <children>
+        <Label layoutX="114.0" layoutY="35.0" text="Name"/>
+        <Label layoutX="118.0" layoutY="77.0" text="Post"/>
+        <Label layoutX="101.0" layoutY="121.0" text="Full Details"/>
+        <TextField fx:id="employenamtextfieldid" layoutX="184.0" layoutY="31.0" prefHeight="25.0" prefWidth="200.0"
+                   promptText="enter empolye name"/>
+        <TextField fx:id="empolyeposttextfieldid" layoutX="184.0" layoutY="73.0" prefHeight="25.0" prefWidth="200.0"
+                   promptText="add employe post"/>
+        <TextArea fx:id="employefulldetailsid" layoutX="184.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0"
+                  promptText="enter employe full details"/>
+        <Button fx:id="saveemployebuttonid" layoutX="239.0" layoutY="338.0" mnemonicParsing="false"
+                onAction="#onActionSaveEmploye" text="Save Employe"/>
+    </children>
 </AnchorPane>

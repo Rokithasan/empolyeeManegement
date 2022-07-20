@@ -15,91 +15,70 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class AdminDashboardController implements Initializable {
 
     @FXML
-    private Button addemployebuttonid;
-    @FXML
-    private Button updateemployebuttonid;
-    @FXML
-    private Button viewallemployeid;
-    @FXML
-    private Button deletebuttonid;
-    @FXML
-    private AnchorPane displayanchorePane;
+    public Button backBtnId;
 
-    private AnchorPane anchorPane;
     @FXML
-    private Button backButtonid;
+    private AnchorPane displayAnchorPane;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL location, ResourceBundle resources) {
+        backBtnId.setVisible(false);
     }
 
     @FXML
-    private void onActionAddEmployeButton(MouseEvent event) {
-
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.ADD_EMPLOYEE));
-            displayanchorePane.getChildren().setAll(anchorPane);
-        } catch (IOException ex) {
-            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @FXML
-    private void onActionUpdateEmployeButton(MouseEvent event) {
-
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.UPDATE_EMPLOYEE));
-            displayanchorePane.getChildren().setAll(anchorPane);
-        } catch (IOException ex) {
-            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
-    @FXML
-    private void onActionViewAllEmployeButton(MouseEvent event) {
-
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.VIEW_EMPLOYEE));
-            displayanchorePane.getChildren().setAll(anchorPane);
-        } catch (IOException ex) {
-            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @FXML
-    private void onActionDeleteButton(MouseEvent event) {
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource(Links.DELETE_EMPLOYEE));
-            displayanchorePane.getChildren().setAll(anchorPane);
-        } catch (IOException ex) {
-            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @FXML
-    private void onActionBackToHome(ActionEvent event) throws IOException {
-
-        employeLoginScene(event);
-
-    }
-
-    public void employeLoginScene(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.EMPLOYEE_LOGIN));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    public void adminLogoutBtnAction(ActionEvent actionEvent) throws IOException {
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_LOGIN));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(layout);
-        stage.setTitle("Empolye Dashbord ");
+        stage.setTitle("Employee Dashboard");
         stage.setScene(scene);
         stage.show();
-
     }
 
+    private void loadAnchorView(String link){
+        try {
+            backBtnId.setVisible(true);
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource(String.valueOf(link)));
+            displayAnchorPane.getChildren().setAll(anchorPane);
+        } catch (IOException ex) {
+            Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    public void addEmployeeBtnAction(ActionEvent actionEvent) {
+        loadAnchorView(Links.ADD_EMPLOYEE);
+    }
+
+
+    @FXML
+    public void updateEmployeeBtnAction(ActionEvent actionEvent) {
+        loadAnchorView(Links.UPDATE_EMPLOYEE);
+    }
+
+    @FXML
+    public void viewAllEmployeeBtnAction(ActionEvent actionEvent) {
+        loadAnchorView(Links.VIEW_EMPLOYEE);
+    }
+
+    @FXML
+    public void deleteEmployeeBtnAction(ActionEvent actionEvent) {
+        loadAnchorView(Links.DELETE_EMPLOYEE);
+    }
+
+    @FXML // back button for sub view
+    public void backBtnAction(ActionEvent actionEvent) throws IOException {
+        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_DASHBOARD));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(layout);
+        stage.setTitle("Employee Dashboard");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
