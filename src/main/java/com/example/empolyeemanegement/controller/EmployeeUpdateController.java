@@ -12,6 +12,7 @@ import com.example.empolyeemanegement.model.Employee;
 import com.example.empolyeemanegement.model.User;
 import com.example.empolyeemanegement.repository.EmployeeDAO;
 import com.example.empolyeemanegement.repository.UserDAO;
+import com.example.empolyeemanegement.utils.FXUtil;
 import com.example.empolyeemanegement.utils.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -60,10 +61,7 @@ public class EmployeeUpdateController implements Initializable {
     public void loadEmployeeDataBtnAction(ActionEvent actionEvent) {
         Employee employee = employeeDAO.getByUsername(usernameTxtFld.getText());
         if (employee == null) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText(null);
-            alert.setContentText("Invalid username, data not found!");
-            alert.showAndWait();
+            FXUtil.showAlert(Alert.AlertType.WARNING, "Invalid username, data not found!");
             dataLoaded = false;
             clear();
         } else {
@@ -79,20 +77,18 @@ public class EmployeeUpdateController implements Initializable {
     @FXML
     public void updateDataBtnAction(ActionEvent actionEvent) {
         // if data not loaded
-        if(!dataLoaded){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText(null);
-            alert.setContentText("without load data can't update!");
-            alert.showAndWait();
+        if (!dataLoaded) {
+            FXUtil.showAlert(Alert.AlertType.WARNING, "without load data can't update!");
+
             dataLoaded = false;
             clear();
-        }else {
+        } else {
             Employee employee = employeeDAO.getByUsername(usernameTxtFld.getText());
             User user = employee.getUser();
 
             user.setName(nameTxtFld.getText());
             user.setMobileNum(mobileTxtFld.getText());
-            if(!updatePassTxtFld.getText().isEmpty()){
+            if (!updatePassTxtFld.getText().isEmpty()) {
                 user.setPassword(PasswordManager.getInstance().encode(updatePassTxtFld.getText()));
             }
             userDAO.update(user); // update user
@@ -104,14 +100,12 @@ public class EmployeeUpdateController implements Initializable {
             employeeDAO.update(employee); // update employee
 
             // alert
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText(null);
-            alert.setContentText("Data updated successfully!");
-            alert.showAndWait();
+            FXUtil.showAlert(Alert.AlertType.INFORMATION, "Data updated successfully!");
         }
     }
 
-    private void clear(){
+    // clear all filed
+    private void clear() {
         nameTxtFld.clear();
         departTxtFld.clear();
         mobileTxtFld.clear();

@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.EmployeeDashboardController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.empolyeemanegement.controller.EmployeeDashboardController">
     <children>
-        <Label layoutX="84.0" layoutY="73.0" text="Name" />
-        <Label layoutX="75.0" layoutY="154.0" text="Full details" />
-        <TextArea fx:id="detailstextarea" layoutX="177.0" layoutY="150.0" prefHeight="200.0" prefWidth="309.0" />
-        <TextField fx:id="nametextfield" layoutX="177.0" layoutY="69.0" prefHeight="25.0" prefWidth="309.0" />
-        <Button fx:id="cahtwithadminbutton" layoutX="177.0" layoutY="418.0" mnemonicParsing="false" onAction="#onActionchatwithAdmin" text="Chat With Admin" />
-        <Button fx:id="updatedetailsbuttonid" layoutX="306.0" layoutY="418.0" mnemonicParsing="false" onAction="#onActionupdateDetails" text="Update Details" />
-        <Label layoutX="88.0" layoutY="112.0" text="Post" />
-        <TextField fx:id="posttextfield" editable="false" layoutX="177.0" layoutY="108.0" prefHeight="25.0" prefWidth="309.0" />
-      <Button fx:id="backbutton" layoutX="487.0" layoutY="25.0" mnemonicParsing="false" onAction="#onActionBackButton" text="Back To Login" />
+        <VBox layoutX="61.0" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#exitBtnAction"
+                                prefHeight="26.0" prefWidth="57.0" text="Exit"/>
+                        <Button fx:id="backBtnId" layoutX="531.0" layoutY="15.0" mnemonicParsing="false"
+                                onAction="#backBtnAction" prefHeight="25.0" prefWidth="57.0" text="Back"/>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="displayAnchorPane" prefHeight="491.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="227.0" layoutY="153.0" mnemonicParsing="false" onAction="#addProjectBtnAction"
+                                prefHeight="26.0" prefWidth="147.0" text="Add Projects"/>
+                        <Button layoutX="226.0" layoutY="197.0" mnemonicParsing="false"
+                                onAction="#updateProjectBtnAction" prefHeight="26.0" prefWidth="147.0"
+                                text="Update Project"/>
+                        <Button layoutX="227.0" layoutY="109.0" mnemonicParsing="false"
+                                onAction="#viewAllProjectsBtnAction" prefHeight="26.0" prefWidth="147.0"
+                                text="View Projects"/>
+                        <Button layoutX="226.0" layoutY="238.0" mnemonicParsing="false"
+                                onAction="#deleteEmployeeBtnAction" prefHeight="26.0" prefWidth="147.0"
+                                text="Delete Project"/>
+                        <Label layoutX="157.0" layoutY="23.0" text="Employee Dashboard">
+                            <font>
+                                <Font name="System Bold" size="32.0"/>
+                            </font>
+                        </Label>
+                        <Button layoutX="227.0" layoutY="280.0" mnemonicParsing="false"
+                                onAction="#employeeChatServerOnAction" prefHeight="25.0" prefWidth="147.0"
+                                text="Open Chat Server"/>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
     </children>
 </AnchorPane>

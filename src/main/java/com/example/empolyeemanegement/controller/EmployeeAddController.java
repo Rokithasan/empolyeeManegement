@@ -9,6 +9,7 @@ import com.example.empolyeemanegement.model.Role;
 import com.example.empolyeemanegement.model.User;
 import com.example.empolyeemanegement.repository.EmployeeDAO;
 import com.example.empolyeemanegement.repository.UserDAO;
+import com.example.empolyeemanegement.utils.FXUtil;
 import com.example.empolyeemanegement.utils.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,7 +53,6 @@ public class EmployeeAddController implements Initializable {
 
         UserDAO userDAO = new UserDAO();
         EmployeeDAO employeeDAO = new EmployeeDAO();
-        String message = "Employee Created Successfully!";
 
         if(userDAO.getUserByUsername(usernameTxtFld.getText()) == null){
             // create user type of employee
@@ -74,19 +74,17 @@ public class EmployeeAddController implements Initializable {
             // clear field data
             clear();
 
-            // success message
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText(message);
-            alert.showAndWait();
+            // show alert
+            FXUtil.showAlert(
+                    Alert.AlertType.ERROR,
+                    "Employee Created Successfully!"
+            );
 
         }else {
-            message = "username already exist, please try with another username.";
-            // success message
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText(message);
-            alert.showAndWait();
+            FXUtil.showAlert(
+                    Alert.AlertType.ERROR,
+                    "username already exist, please try with another username."
+            );
         }
     }
 

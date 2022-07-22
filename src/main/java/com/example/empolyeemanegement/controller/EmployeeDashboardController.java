@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.example.empolyeemanegement.utils.FXUtil;
 import com.example.empolyeemanegement.utils.Links;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,69 +14,50 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class EmployeeDashboardController implements Initializable {
 
     @FXML
-    private TextArea detailstextarea;
+    public Button backBtnId;
+
     @FXML
-    private TextField nametextfield;
-    @FXML
-    private Button cahtwithadminbutton;
-    @FXML
-    private Button updatedetailsbuttonid;
-    @FXML
-    private TextField posttextfield;
-    @FXML
-    private Button backbutton;
+    public AnchorPane displayAnchorPane;
+
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL location, ResourceBundle resources) {
+        backBtnId.setVisible(false);
     }
 
     @FXML
-    private void onActionchatwithAdmin(ActionEvent event) {
-        
+    public void exitBtnAction(ActionEvent actionEvent) {
+        System.exit(0);
     }
 
     @FXML
-    private void onActionupdateDetails(ActionEvent event) throws IOException {
-        
-        switchSceneUpdateDetails(event);
-        
-        
+    public void backBtnAction(ActionEvent actionEvent) throws IOException {
+        FXUtil.loadView(actionEvent,Links.EMPLOYEE_DASHBOARD,"Employee Dashboard");
     }
 
     @FXML
-    private void onActionBackButton(ActionEvent event) throws IOException {
-        
-        switchSceneback(event);
-        
-        
+    public void addProjectBtnAction(ActionEvent actionEvent) {
     }
 
-    public void switchSceneback(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_LOGIN));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(layout);
-        stage.setTitle("Login");
-        stage.setScene(scene);
-        stage.show();
-
-    }
-    
-        public void switchSceneUpdateDetails(ActionEvent event) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.UPDATE_EMPLOYEE));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(layout);
-        stage.setTitle("Login");
-        stage.setScene(scene);
-        stage.show();
-
+    @FXML
+    public void updateProjectBtnAction(ActionEvent actionEvent) {
     }
 
+    @FXML
+    public void viewAllProjectsBtnAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void deleteEmployeeBtnAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void employeeChatServerOnAction(ActionEvent actionEvent) {
+    }
 }

@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.example.empolyeemanegement.model.Employee;
+import com.example.empolyeemanegement.repository.EmployeeDAO;
+import com.example.empolyeemanegement.utils.FXUtil;
 import com.example.empolyeemanegement.utils.Links;
+import com.example.empolyeemanegement.utils.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,10 +27,9 @@ import javafx.stage.Stage;
 public class EmployeeLoginController implements Initializable {
 
     @FXML
-    public TextField usernameFiled;
-
+    public TextField usernameTxtFld;
     @FXML
-    public PasswordField passwordField;
+    public PasswordField passwordTxtFld;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -36,45 +39,30 @@ public class EmployeeLoginController implements Initializable {
     @FXML
     private void handleLoginButtonAction(ActionEvent event) throws IOException {
 
-        String name = usernameFiled.getText();
-        String password = passwordField.getText();
+        String username = usernameTxtFld.getText();
+        String password = passwordTxtFld.getText();
 
-        if (name.isEmpty() || password.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Please Fill all requre Information");
-            alert.showAndWait();
+        if (username.isEmpty() || password.isEmpty()) {
+            FXUtil.showAlert(Alert.AlertType.WARNING,
+                    "Please fill all require information");
         } else {
-            if (name.equals("admin") && password.equals("admin")) {
+            // verify employee data
+            EmployeeDAO empDao = new EmployeeDAO();
+            Employee emp = empDao.getByUsername(username);
+
+            if (emp != null &&
+                    PasswordManager.getInstance().matches(password, emp.getUser().getPassword())
+            ) {
                 ((Node) event.getSource()).getScene().getWindow().hide();
-                loadEmployeeDashboard(event);
+                FXUtil.loadView(event,Links.EMPLOYEE_DASHBOARD,"Employee Dashboard");
             } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText(null);
-                alert.setContentText("Please enter valid Data");
-                alert.showAndWait();
+                FXUtil.showAlert(Alert.AlertType.ERROR, "Invalid username or password");
             }
         }
     }
 
-    @FXML
+    @FXML // move to admin login
     private void handleAdminLoginButtonAction(ActionEvent event) throws IOException {
-        URL resource = getClass().getResource(Links.ADMIN_LOGIN);
-        Parent layout = FXMLLoader.load(resource);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(layout);
-        stage.setTitle("Admin Login");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void loadEmployeeDashboard(ActionEvent event) throws IOException {
-        URL resource = getClass().getResource(Links.EMPLOYEE_DASHBOARD);
-        Parent layout = FXMLLoader.load(resource);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(layout);
-        stage.setTitle("Employee Dashboard");
-        stage.setScene(scene);
-        stage.show();
+        FXUtil.loadView(event,Links.ADMIN_LOGIN,"Admin Login");
     }
 }

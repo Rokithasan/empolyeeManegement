@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.example.empolyeemanegement.utils.FXUtil;
 import com.example.empolyeemanegement.utils.Links;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,12 +34,7 @@ public class AdminDashboardController implements Initializable {
 
     @FXML // logout
     public void adminLogoutBtnAction(ActionEvent actionEvent) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_LOGIN));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(layout);
-        stage.setTitle("Employee Dashboard");
-        stage.setScene(scene);
-        stage.show();
+        FXUtil.loadView(actionEvent,Links.ADMIN_LOGIN,"Admin Login");
     }
 
     // load view based on view name
@@ -74,12 +71,7 @@ public class AdminDashboardController implements Initializable {
 
     @FXML // back button for sub view
     public void backBtnAction(ActionEvent actionEvent) throws IOException {
-        Parent layout = FXMLLoader.load(getClass().getResource(Links.ADMIN_DASHBOARD));
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(layout);
-        stage.setTitle("Admin Dashboard");
-        stage.setScene(scene);
-        stage.show();
+        FXUtil.loadView(actionEvent,Links.ADMIN_DASHBOARD,"Admin Dashboard");
     }
 
     @FXML
