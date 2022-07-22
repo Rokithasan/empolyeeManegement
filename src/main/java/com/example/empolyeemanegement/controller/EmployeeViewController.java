@@ -5,11 +5,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import com.example.empolyeemanegement.model.Employee;
 import com.example.empolyeemanegement.repository.EmployeeDAO;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 
 public class EmployeeViewController implements Initializable {
 
+    @FXML
     public TextArea viewTxtAreaID;
 
     @Override
@@ -20,6 +22,5 @@ public class EmployeeViewController implements Initializable {
             sb.append(employee.toString()).append("\n");
         }
         viewTxtAreaID.setText(sb.toString());
-    }    
-
+    }
 }

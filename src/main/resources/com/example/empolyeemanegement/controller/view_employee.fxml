@@ -5,12 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.EmployeeViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.empolyeemanegement.controller.EmployeeViewController">
     <children>
         <Label layoutX="25.0" layoutY="25.0" text="All Employee Data">
-         <font>
-            <Font size="26.0" />
-         </font></Label>
-        <TextArea fx:id="viewTxtAreaID" layoutX="25.0" layoutY="66.0" prefHeight="310.0" prefWidth="551.0" />
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Label>
+        <TextArea fx:id="viewTxtAreaID" layoutX="25.0" layoutY="66.0" prefHeight="310.0" prefWidth="551.0"/>
     </children>
 </AnchorPane>
