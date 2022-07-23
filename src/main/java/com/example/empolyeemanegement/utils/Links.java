@@ -2,6 +2,9 @@ package com.example.empolyeemanegement.utils;
 
 public class Links {
 
+    //jsop
+    public static final String WIKI_NEWS = "wiki_news.fxml";
+
     // employee section
     public static String EMPLOYEE_LOGIN = "employee_login.fxml";
     public static String EMPLOYEE_DASHBOARD = "employee_dashboard.fxml";

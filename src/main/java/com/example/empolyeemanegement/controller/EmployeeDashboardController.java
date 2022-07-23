@@ -74,4 +74,8 @@ public class EmployeeDashboardController implements Initializable {
     public void employeeChatServerOnAction(ActionEvent actionEvent) {
         // todo:
     }
+
+    public void wikiWorkNewsOnAction(ActionEvent event) {
+        loadAnchorView(Links.WIKI_NEWS);
+    }
 }

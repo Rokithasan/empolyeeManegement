@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.WikiNewsJSopController">
+    <children>
+        <Label layoutX="25.0" layoutY="25.0" text="Today Wiki Word News">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="viewTxtAreaID" layoutX="25.0" layoutY="66.0" prefHeight="310.0" prefWidth="551.0" />
+    </children>
+</AnchorPane>
