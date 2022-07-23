@@ -13,15 +13,11 @@ import com.example.empolyeemanegement.utils.Links;
 import com.example.empolyeemanegement.utils.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class AdminLoginController implements Initializable {
 
@@ -67,7 +63,7 @@ public class AdminLoginController implements Initializable {
             if (adminLoginVerifier(username, password)) {
                 ((Node) event.getSource()).getScene().getWindow().hide();
                 // after validation move/load admin dashboard
-                FXUtil.loadView(event, Links.ADMIN_DASHBOARD, "Admin Dashboard");
+                FXUtil.loadView(getClass(), event, Links.ADMIN_DASHBOARD, "Admin Dashboard");
             } else {
                 FXUtil.showAlert(
                         Alert.AlertType.WARNING,

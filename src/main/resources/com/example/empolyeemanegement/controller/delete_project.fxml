@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.empolyeemanegement.controller.ProjectDeleteController">
+    <children>
+        <Label layoutX="31.0" layoutY="42.0" text="Delete Project by ID">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Label>
+        <Label layoutX="31.0" layoutY="94.0" prefHeight="17.0" prefWidth="95.0" text="Project ID:"/>
+        <TextField fx:id="projectTxtFld" layoutX="31.0" layoutY="118.0" prefHeight="26.0" prefWidth="544.0"
+                   promptText="enter project id"/>
+        <Line endX="443.0" layoutX="132.0" layoutY="83.0" startX="-100.0"/>
+        <TextArea fx:id="detailsTxtArea" layoutX="31.0" layoutY="200.0" prefHeight="177.0" prefWidth="544.0"/>
+        <Button layoutX="32.0" layoutY="160.0" mnemonicParsing="false" onAction="#selectAndViewDetailsBtnAction"
+                prefHeight="26.0" prefWidth="159.0" text="Select &amp; View By ID"/>
+        <Button layoutX="228.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewAllBtnAction" prefHeight="26.0"
+                prefWidth="159.0" text="View All"/>
+        <Button layoutX="417.0" layoutY="160.0" mnemonicParsing="false" onAction="#deleteBtnAction" prefHeight="26.0"
+                prefWidth="159.0" text="Delete Project"/>
+    </children>
+</AnchorPane>

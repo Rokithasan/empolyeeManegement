@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.empolyeemanegement.controller.ProjectAddController">
+    <children>
+        <Label layoutX="20.0" layoutY="21.0" text="Add New Project">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <Label layoutX="20.0" layoutY="71.0" text="Project's Name:" />
+        <TextField fx:id="projectNameTxtFld" layoutX="20.0" layoutY="94.0" prefHeight="26.0" prefWidth="267.0" promptText="enter project name" />
+        <Label layoutX="20.0" layoutY="126.0" text="Project Deadline" />
+        <Line endX="447.0" layoutX="121.0" layoutY="60.0" startX="-100.0" />
+        <Label layoutX="313.0" layoutY="69.0" text="Project's Budget" />
+        <TextField fx:id="budgetTxtId" layoutX="313.0" layoutY="93.0" prefHeight="26.0" prefWidth="267.0" promptText="enter project budget" />
+        <Button layoutX="22.0" layoutY="190.0" mnemonicParsing="false" onAction="#createProjectBtnAction" prefHeight="26.0" prefWidth="557.0" text="Create Project" />
+      <DatePicker fx:id="deadlineDatePickerId" layoutX="20.0" layoutY="149.0" prefHeight="26.0" prefWidth="267.0" promptText="select project deadline" />
+    </children>
+</AnchorPane>

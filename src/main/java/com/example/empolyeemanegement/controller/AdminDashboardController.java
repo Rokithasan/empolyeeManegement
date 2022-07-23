@@ -12,12 +12,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class AdminDashboardController implements Initializable {
 
@@ -34,11 +30,11 @@ public class AdminDashboardController implements Initializable {
 
     @FXML // logout
     public void adminLogoutBtnAction(ActionEvent actionEvent) throws IOException {
-        FXUtil.loadView(actionEvent,Links.ADMIN_LOGIN,"Admin Login");
+        FXUtil.loadView(getClass(), actionEvent, Links.ADMIN_LOGIN, "Admin Login");
     }
 
     // load view based on view name
-    private void loadAnchorView(String link){
+    private void loadAnchorView(String link) {
         try {
             backBtnId.setVisible(true);
             AnchorPane anchorPane = FXMLLoader.load(getClass().getResource(String.valueOf(link)));
@@ -71,7 +67,7 @@ public class AdminDashboardController implements Initializable {
 
     @FXML // back button for sub view
     public void backBtnAction(ActionEvent actionEvent) throws IOException {
-        FXUtil.loadView(actionEvent,Links.ADMIN_DASHBOARD,"Admin Dashboard");
+        FXUtil.loadView(getClass(), actionEvent, Links.ADMIN_DASHBOARD, "Admin Dashboard");
     }
 
     @FXML

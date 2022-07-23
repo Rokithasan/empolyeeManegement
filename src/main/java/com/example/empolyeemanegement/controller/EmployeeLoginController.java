@@ -11,15 +11,11 @@ import com.example.empolyeemanegement.utils.Links;
 import com.example.empolyeemanegement.utils.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 /**
  * @author Hp
@@ -54,15 +50,17 @@ public class EmployeeLoginController implements Initializable {
                     PasswordManager.getInstance().matches(password, emp.getUser().getPassword())
             ) {
                 ((Node) event.getSource()).getScene().getWindow().hide();
-                FXUtil.loadView(event,Links.EMPLOYEE_DASHBOARD,"Employee Dashboard");
+                FXUtil.loadView(getClass(), event, Links.EMPLOYEE_DASHBOARD, "Employee Dashboard");
             } else {
                 FXUtil.showAlert(Alert.AlertType.ERROR, "Invalid username or password");
             }
+
+            Class<?> aClass = getClass();
         }
     }
 
     @FXML // move to admin login
     private void handleAdminLoginButtonAction(ActionEvent event) throws IOException {
-        FXUtil.loadView(event,Links.ADMIN_LOGIN,"Admin Login");
+        FXUtil.loadView(getClass(), event, Links.ADMIN_LOGIN, "Admin Login");
     }
 }
