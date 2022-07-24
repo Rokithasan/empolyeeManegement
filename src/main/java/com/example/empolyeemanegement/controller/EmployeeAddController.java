@@ -27,16 +27,22 @@ public class EmployeeAddController implements Initializable {
 
     @FXML
     public TextField nameTxtFld;
+
     @FXML
     public TextField mobileNumTxtFld;
+
     @FXML
     public TextField departmentTxtId;
+
     @FXML
     public TextField salaryTxtID;
+
     @FXML
     public TextField usernameTxtFld;
+
     @FXML
     public TextField passwordTxtFld;
+
     @FXML
     public TextField designTxtID;
 

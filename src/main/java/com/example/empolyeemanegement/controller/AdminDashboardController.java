@@ -72,6 +72,7 @@ public class AdminDashboardController implements Initializable {
 
     @FXML
     public void adminChatServerOnAction(ActionEvent actionEvent) {
-        // todo: open chat server
+        loadAnchorView(Links.ADMIN_CHAT);
+
     }
 }

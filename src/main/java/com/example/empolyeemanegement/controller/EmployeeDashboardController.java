@@ -72,7 +72,7 @@ public class EmployeeDashboardController implements Initializable {
 
     @FXML
     public void employeeChatServerOnAction(ActionEvent actionEvent) {
-        // todo:
+        loadAnchorView(Links.EMPLOYEE_CHAT);
     }
 
     public void wikiWorkNewsOnAction(ActionEvent event) {

@@ -5,6 +5,11 @@ public class Links {
     //jsop
     public static final String WIKI_NEWS = "wiki_news.fxml";
 
+    //chat
+    public static final String EMPLOYEE_CHAT = "employee_chat.fxml";
+    public static final String ADMIN_CHAT = "admin_chat.fxml";
+
+
     // employee section
     public static String EMPLOYEE_LOGIN = "employee_login.fxml";
     public static String EMPLOYEE_DASHBOARD = "employee_dashboard.fxml";
