@@ -77,5 +77,4 @@ public class UserTest {
         assertNull(userDAO.getUserByUsername("jhondue1"));
     }
 
-
 }

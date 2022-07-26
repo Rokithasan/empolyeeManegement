@@ -1,8 +1,14 @@
+import com.example.empolyeemanegement.model.Project;
 import com.example.empolyeemanegement.model.Role;
 import com.example.empolyeemanegement.model.User;
+import com.example.empolyeemanegement.repository.ProjectDAO;
 import com.example.empolyeemanegement.repository.UserDAO;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -11,69 +17,50 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  */
 public class ProjectTest {
 
-    private UserDAO userDAO;
+    private ProjectDAO projectDAO;
 
     @BeforeEach
     public void setup() {
-        userDAO = new UserDAO();
+        projectDAO = new ProjectDAO();
     }
 
     @Test
-    public void createUserTest(){
-        User user1 = new User();
-        user1.setMobileNum("12345678");
-        user1.setName("Jhon Due");
-        user1.setPassword("1234");
-        user1.setRole(Role.EMPLOYEE);
-        user1.setUsername("jhondue1");
+    public void createUserTest() {
+        Project project = new Project();
+        project.setName("Project 11");
+        project.setBudget(120000);
+        project.setDeadline(LocalDate.of(2023, 12, 12));
 
-        // create user
-        User createdUser = userDAO.create(user1);
-        User one = userDAO.findOne(createdUser.getId());
-        assertEquals(createdUser, one);
+        Project project1 = projectDAO.create(project);
+        assertEquals(project, project1);
     }
 
     @Test
-    public void updateUserTest(){
-        User user1 = new User();
-        user1.setMobileNum("12345678");
-        user1.setName("Jhon Due");
-        user1.setPassword("1234");
-        user1.setRole(Role.EMPLOYEE);
-        user1.setUsername("jhondue12");
-        userDAO.create(user1);
+    public void updateUserTest() {
+        Project project = new Project();
+        project.setName("Project 12");
+        project.setBudget(1200);
+        project.setDeadline(LocalDate.of(2024, 10, 12));
 
-        // update and test user
-        User user = userDAO.getUserByUsername("jhondue12");
-        user.setName("Jhon Akkarm");
-        userDAO.update(user);
+        Project project1 = projectDAO.create(project);
 
-        assertEquals(user, userDAO.getUserByUsername("jhondue12"));
+        project1.setName("Project 111");
+        projectDAO.update(project1);
+
+        assertEquals(projectDAO.findOne(project1.getId()).getName(), project1.getName());
     }
 
     @Test
-    public void readUserTest(){
-        User user1 = new User();
-        user1.setMobileNum("12345678");
-        user1.setName("John Smit");
-        user1.setPassword("12345");
-        user1.setRole(Role.EMPLOYEE);
-        user1.setUsername("jhonsmit1");
-        User user = userDAO.create(user1);
+    public void deleteUserTest() {
+        Project project = new Project();
+        project.setName("Project D");
+        project.setBudget(120);
+        project.setDeadline(LocalDate.of(2024, 10, 12));
 
-        assertEquals(user, userDAO.getUserByUsername("jhonsmit1"));
+        Project project1 = projectDAO.create(project);
+        assertEquals(project, project1);
+
+        projectDAO.delete(project1);
+        assertNull(projectDAO.findOne(project1.getId()));
     }
-
-    @Test
-    public void deleteUserTest(){
-        userDAO.delete(userDAO.getUserByUsername("jhonsmit1"));
-        userDAO.delete(userDAO.getUserByUsername("jhondue12"));
-        userDAO.delete(userDAO.getUserByUsername("jhondue1"));
-
-        assertNull(userDAO.getUserByUsername("jhonsmit1"));
-        assertNull(userDAO.getUserByUsername("jhondue12"));
-        assertNull(userDAO.getUserByUsername("jhondue1"));
-    }
-
-
 }
